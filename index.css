@@ -1,0 +1,576 @@
+/* ===== RESET CSS ===== */
+/* Elimina márgenes y padding por defecto de todos los elementos */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== ESTILOS GENERALES ===== */
+/* Estilos del cuerpo de la página */
+body{
+    font-family: 'Barlow', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Contenedor principal */
+.main{
+    width: 100%;
+}
+
+/* ===== HEADER ===== */
+/* Sección principal del header con imagen de fondo */
+.header{
+    background-image: url(images/desktop/image-header.jpg);
+    color: white;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Altura completa de la ventana */
+    width: 100%;
+    position: relative;
+    padding: 25px;
+}
+
+/* Contenedor del header con navegación */
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Logo a la izquierda, nav a la derecha */
+}
+
+/* Enlaces de navegación */
+.nav-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px; /* Espacio entre enlaces */
+}
+
+/* Enlaces de navegación normales */
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+/* Botón de contacto especial */
+.nav-link-contact{
+    color: white;
+    text-decoration: none;
+    background-color: hsl(202, 93%, 73%); /* Azul claro */
+    border-radius: 10px;
+    border: none;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+/* Efecto hover del botón de contacto */
+.nav-link-contact:hover{
+    background-color: hsl(202, 63%, 43%); /* Azul más oscuro */
+    cursor: pointer;
+}
+
+/* ===== MENÚ HAMBURGUESA ===== */
+/* Botón hamburguesa (oculto por defecto) */
+.hamburger-btn{
+    display: none; /* Solo visible en móviles */
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    gap: 4px; /* Espacio entre las líneas */
+}
+
+/* Líneas del botón hamburguesa */
+.hamburger-line{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease; /* Animación suave */
+}
+
+/* ===== MENÚ MÓVIL EMERGENTE ===== */
+/* Overlay del menú móvil (fondo oscuro) */
+.mobile-menu{
+    display: none;
+    position: fixed; /* Cubre toda la pantalla */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 1000; /* Aparece encima de todo */
+    grid-template-columns: 1fr auto; /* Overlay | Menú */
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "overlay menu"
+        "overlay menu";
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Animación de aparición */
+}
+
+/* Estado activo del menú móvil */
+.mobile-menu.active{
+    display: grid;
+    opacity: 1;
+}
+
+/* Contenido del menú móvil */
+.mobile-menu-content{
+    grid-area: menu; /* Ocupa el área "menu" del grid */
+    background-color: white;
+    padding: 40px 30px;
+    border-radius: 10px 0 0 10px; /* Bordes redondeados solo a la izquierda */
+    box-shadow: -5px 0 20px rgba(0,0,0,0.3); /* Sombra hacia la izquierda */
+    transform: translateX(100%); /* Inicia fuera de pantalla */
+    transition: transform 0.3s ease; /* Animación de deslizamiento */
+    min-width: 250px;
+    display: grid;
+    grid-template-rows: repeat(4, auto); /* 4 filas automáticas para los enlaces */
+    gap: 20px; /* Espacio entre enlaces */
+    align-content: start; /* Alinea contenido al inicio */
+}
+
+/* Estado activo del contenido del menú */
+.mobile-menu.active .mobile-menu-content{
+    transform: translateX(0); /* Se desliza hacia adentro */
+}
+
+/* ===== ENLACES DEL MENÚ MÓVIL ===== */
+/* Enlaces normales del menú móvil */
+.mobile-nav-link{
+    color: hsl(210, 4%, 67%); /* Gris claro */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 0;
+    text-align: left;
+    border-bottom: 1px solid hsl(210, 4%, 67%, 0.1); /* Separador sutil */
+    transition: color 0.3s ease; /* Animación de color */
+}
+
+/* Efecto hover de enlaces normales */
+.mobile-nav-link:hover{
+    color: hsl(212, 27%, 19%); /* Gris oscuro */
+}
+
+/* Botón de contacto especial en menú móvil */
+.mobile-nav-link-contact{
+    background-color: hsl(51, 100%, 49%); /* Amarillo */
+    color: hsl(212, 27%, 19%); /* Texto oscuro */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 15px 20px;
+    border-radius: 25px; /* Bordes muy redondeados */
+    text-align: center;
+    font-weight: 700; /* Texto en negrita */
+    border: none;
+    transition: background-color 0.3s ease; /* Animación de fondo */
+}
+
+/* Efecto hover del botón de contacto */
+.mobile-nav-link-contact:hover{
+    background-color: hsl(51, 100%, 40%); /* Amarillo más oscuro */
+}
+
+/* ===== TÍTULO PRINCIPAL ===== */
+/* Título principal del header */
+.header h1{
+    font-family: 'Fraunces', serif; /* Fuente serif para títulos */
+    font-weight: 900; /* Peso máximo */
+    font-size: 45px;
+    text-align: center;
+    margin-top: 100px; /* Espacio desde la navegación */
+    letter-spacing: 10px; /* Espaciado entre letras */
+}
+
+/* ===== FLECHA INDICADORA ===== */
+/* Contenedor de la flecha hacia abajo */
+.arrow-down{
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    margin-top: 60px; /* Espacio desde el título */
+}
+/* ===== GRID PRINCIPAL ===== */
+/* Contenedor principal del grid (2 columnas x 3 filas) */
+.contenedor-principal-grid{
+    display: grid;
+    grid-template-columns: 50% 50%; /* 2 columnas iguales */
+    grid-template-rows: 600px 600px 600px; /* 3 filas de 600px cada una */
+    width: 100%;
+    gap: 0; /* Sin espacio entre elementos */
+    overflow: hidden; /* Oculta contenido que se desborde */
+}
+
+/* ===== ENLACES DEL GRID ===== */
+/* Enlaces dentro de los elementos del grid */
+.contenedor-grid a{
+    text-decoration: none;
+    font-weight: 700; /* Texto en negrita */
+    color: rgb(14, 59, 50); /* Verde oscuro */
+    padding-top: 20px;
+}
+
+/* Efecto hover de los enlaces */
+.contenedor-grid a:hover{
+    color: hsl(167, 34%, 41%); /* Verde más claro */
+    text-decoration: underline yellow 5px; /* Subrayado amarillo */
+    cursor: pointer;
+}
+
+/* ===== ELEMENTOS DEL GRID ===== */
+/* Estilos base para todos los elementos del grid */
+.contenedor-grid{
+    padding: 100px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column; /* Elementos apilados verticalmente */
+    justify-content: center; /* Centra verticalmente */
+    align-items: start; /* Alinea a la izquierda */
+    gap: 20px; /* Espacio entre elementos internos */
+    min-height: 600px; /* Altura mínima */
+    box-sizing: border-box; /* Incluye padding en el tamaño total */
+}
+/* ===== ELEMENTOS ESPECIALES DEL GRID ===== */
+/* Elementos 5 y 6 (Graphic Design y Photography) - centrados */
+.contenedor-grid:nth-child(5), .contenedor-grid:nth-child(6){
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    text-align: center; /* Centra el texto */
+    justify-content: flex-end; /* Alinea al final (abajo) */
+}
+
+/* Párrafos de los elementos 5 y 6 con color especial */
+.contenedor-grid:nth-child(5) p, .contenedor-grid:nth-child(6) p{
+    color: hsl(212, 27%, 19%); /* Gris oscuro para mejor contraste */
+}
+
+/* ===== TÍTULOS ===== */
+/* Título principal de la sección (CLIENT TESTIMONIALS) */
+.main h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 100px; /* Espacio desde el grid anterior */
+    color: hsl(210, 4%, 67%); /* Gris claro */
+    font-size: 32px;
+    letter-spacing: 5px; /* Espaciado entre letras */
+}
+
+/* Títulos dentro de los elementos del grid */
+.contenedor-grid h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 48px; /* Tamaño grande */
+    text-align: start; /* Alineado a la izquierda */
+    color: hsl(212, 27%, 19%); /* Gris oscuro */
+    letter-spacing: 0px; /* Sin espaciado entre letras */
+}
+
+/* Párrafos dentro de los elementos del grid */
+.contenedor-grid p{
+    font-size: 18px;
+    font-weight: 400; /* Peso normal */
+    color: hsl(210, 4%, 67%); /* Gris claro */
+}
+/* ===== IMÁGENES DE FONDO (DESKTOP) ===== */
+/* Imagen de fondo del elemento 2 (Transform) */
+.contenedor-grid:nth-child(2){
+    background-image: url(images/desktop/image-transform.jpg);
+    background-size: cover; /* Cubre todo el elemento */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+}
+
+/* Imagen de fondo del elemento 3 (Stand Out) */
+.contenedor-grid:nth-child(3){
+    background-image: url(images/desktop/image-stand-out.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Imagen de fondo del elemento 5 (Graphic Design) */
+.contenedor-grid:nth-child(5){
+    background-image: url(images/desktop/image-graphic-design.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Imagen de fondo del elemento 6 (Photography) */
+.contenedor-grid:nth-child(6){
+    background-image: url(images/desktop/image-photography.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+/* ===== SECCIÓN DE TESTIMONIOS ===== */
+/* Grid de testimonios (3 columnas) */
+.contenedor-grid-testimonials{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+    grid-template-rows: 1fr; /* 1 fila */
+    gap: 25px; /* Espacio entre testimonios */
+    padding: 100px; /* Espaciado interno */
+    padding-top: 50px; /* Menos espacio arriba */
+}
+
+/* Imágenes de perfil de los testimonios */
+.contenedor-grid-testimonials img{
+    border-radius: 50%; /* Imagen circular */
+    width: 100px;
+    height: 100px;
+    margin-bottom: 30px; /* Espacio debajo de la imagen */
+}
+
+/* Párrafos de los testimonios */
+.contenedor-grid-testimonials p{
+    color: hsl(210, 4%, 67%); /* Gris claro */
+}
+
+/* Nombres de los testimonios */
+.contenedor-grid-testimonials h3{
+    color: hsl(212, 27%, 19%); /* Gris oscuro */
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    padding-top: 25px; /* Espacio arriba del nombre */
+}
+
+/* Contenedores individuales de testimonios */
+.contenedor-grid-testimonials-1,
+.contenedor-grid-testimonials-2,
+.contenedor-grid-testimonials-3{
+    text-align: center; /* Centra el texto */
+    display: flex;
+    flex-direction: column; /* Elementos apilados */
+    align-items: center; /* Centra horizontalmente */
+}
+
+/* ===== GALERÍA DE IMÁGENES ===== */
+/* Grid de la galería (4 columnas) */
+.contenedor-grid-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; /* 4 columnas iguales */
+    grid-template-rows: 1fr; /* 1 fila */
+}
+
+/* Imágenes de la galería */
+.contenedor-grid-gallery img{
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Altura completa */
+    object-fit: cover; /* Mantiene proporción y cubre el espacio */
+}
+
+/* ===== FOOTER ===== */
+/* Contenedor principal del footer */
+.footer{
+    background-color: hsl(167, 34%, 41%); /* Verde oscuro */
+    display: flex;
+    flex-direction: column; /* Elementos apilados */
+    justify-content: space-between; /* Distribuye el espacio */
+    align-items: center; /* Centra horizontalmente */
+    padding: 30px; /* Espaciado interno */
+    gap: 30px; /* Espacio entre elementos */
+}
+
+/* Enlaces del footer */
+.footer a{
+    text-decoration: none;
+    color: rgb(14, 59, 50); /* Verde oscuro */
+}
+
+/* Efecto hover de enlaces del footer */
+.footer a:hover{
+    color: white; /* Cambia a blanco */
+    cursor: pointer;
+}
+
+/* Efecto hover de imágenes del footer */
+.footer img:hover{
+    filter: brightness(0) invert(1); /* Invierte colores */
+    cursor: pointer;
+}
+
+/* Enlaces de navegación del footer */
+.footer-links{
+    display: flex;
+    flex-direction: row; /* Enlaces en fila */
+    gap: 40px; /* Espacio entre enlaces */
+}
+
+/* Redes sociales del footer */
+.footer-social-media{
+    display: flex;
+    flex-direction: row; /* Iconos en fila */
+    gap: 20px; /* Espacio entre iconos */
+    padding-top: 20px; /* Espacio arriba */
+}
+
+/* Filtro de color para iconos del footer */
+.footer img{
+    filter: brightness(0) saturate(100%) invert(30%) sepia(50%) saturate(2000%) hue-rotate(120deg) brightness(0.4) contrast(1.2);
+}
+
+
+
+/* ===== DISEÑO RESPONSIVE ===== */
+/* Media query para dispositivos móviles (768px o menos) */
+@media (max-width: 768px){
+    /* ===== HEADER RESPONSIVE ===== */
+    /* Cambiar imagen de fondo para móviles */
+    .header{
+        background-image: url(images/mobile/image-header.jpg);
+    }
+    
+    /* Ajustar título para móviles */
+    .header h1{
+        font-size: 32px; /* Tamaño más pequeño */
+        letter-spacing: 5px; /* Menos espaciado entre letras */
+    }
+    
+    /* Ocultar navegación normal en móviles */
+    .nav-links{
+        display: none;
+    }
+    
+    /* Mostrar botón hamburguesa en móviles */
+    .hamburger-btn{
+        display: flex;
+    }
+    /* ===== GRID PRINCIPAL RESPONSIVE ===== */
+    /* Cambiar a 1 columna en móviles */
+    .contenedor-principal-grid{
+        grid-template-columns: 100%; /* 1 columna */
+        grid-template-rows: 500px 500px 500px 500px 500px 500px; /* 6 filas de 500px */
+        grid-template-areas: 
+            "pos2"  /* Imagen Transform primero */
+            "pos1"  /* Texto Transform segundo */
+            "pos3"  /* Imagen Stand Out tercero */
+            "pos4"  /* Texto Stand Out cuarto */
+            "pos5"  /* Graphic Design quinto */
+            "pos6"; /* Photography sexto */
+    }
+    
+    /* ===== POSICIONAMIENTO MÓVIL ===== */
+    /* Solo en móviles: intercambiar posiciones de elementos 1 y 2 */
+    .contenedor-grid:nth-child(1){
+        grid-area: pos1; /* Elemento 1 va a posición 2 */
+    }
+    
+    .contenedor-grid:nth-child(2){
+        grid-area: pos2; /* Elemento 2 va a posición 1 */
+    }
+    
+    .contenedor-grid:nth-child(3){
+        grid-area: pos3;
+    }
+    
+    .contenedor-grid:nth-child(4){
+        grid-area: pos4;
+    }
+    
+    .contenedor-grid:nth-child(5){
+        grid-area: pos5;
+    }
+    
+    .contenedor-grid:nth-child(6){
+        grid-area: pos6;
+    }
+    
+    /* Ajustar elementos del grid para móviles */
+    .contenedor-grid{
+        padding: 30px; /* Menos padding en móviles */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        gap: 20px;
+        min-height: 500px; /* Altura menor en móviles */
+        box-sizing: border-box;
+    }
+
+    /* Enlaces del grid en móviles */
+    .contenedor-grid a{
+        text-decoration: none;
+        font-weight: 600; /* Peso medio */
+        color: rgb(14, 59, 50);
+        padding-top: 20px;
+    }
+    
+    /* Efecto hover de enlaces en móviles */
+    .contenedor-grid a:hover{
+        color: hsl(167, 34%, 41%);
+        text-decoration: underline yellow 5px;
+        cursor: pointer;
+    }
+    
+    /* Párrafos del grid en móviles */
+    .contenedor-grid p{
+        font-size: 15px; /* Tamaño más pequeño */
+        font-weight: 400;
+        color: hsl(210, 4%, 67%);
+    }
+    
+    /* Títulos del grid en móviles */
+    .contenedor-grid h2{
+        font-size: 30px; /* Tamaño más pequeño */
+        font-weight: 700;
+        color: hsl(212, 27%, 19%);
+        letter-spacing: 0px;
+    }
+    
+    /* ===== IMÁGENES DE FONDO MÓVILES ===== */
+    /* Imagen de fondo móvil del elemento 2 */
+    .contenedor-grid:nth-child(2){
+        background-image: url(images/mobile/image-transform.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    /* Imagen de fondo móvil del elemento 3 */
+    .contenedor-grid:nth-child(3){
+        background-image: url(images/mobile/image-stand-out.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    /* Imagen de fondo móvil del elemento 5 */
+    .contenedor-grid:nth-child(5){
+        background-image: url(images/mobile/image-graphic-design.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    /* Imagen de fondo móvil del elemento 6 */
+    .contenedor-grid:nth-child(6){
+        background-image: url(images/mobile/image-photography.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    /* ===== TESTIMONIOS RESPONSIVE ===== */
+    /* Cambiar testimonios a 1 columna en móviles */
+    .contenedor-grid-testimonials{
+        grid-template-columns: 1fr; /* 1 columna */
+        grid-template-rows: auto auto auto; /* 3 filas automáticas */
+        gap: 25px;
+        padding: 25px; /* Menos padding en móviles */
+        padding-top: 50px;
+    }
+    
+    /* Estilos especiales para testimonios en móviles */
+    .contenedor-grid-testimonials-1,
+    .contenedor-grid-testimonials-2,
+    .contenedor-grid-testimonials-3{
+        border: 3px solid black; /* Borde negro */
+        border-radius: 10px; /* Bordes redondeados */
+        padding: 25px;
+        background-color: hsl(69, 20%, 93%); /* Fondo gris claro */
+    }
+}

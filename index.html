@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Práctica - CSS Flex y Grid | Desarrollo Web</title>
+    <meta name="description" content="Esta es una práctica en el uso de CSS con Flexbox y Grid. Aprende a crear layouts modernos y responsivos con las tecnologías más actuales de CSS.">
+    <meta name="keywords" content="CSS, Flexbox, Grid, desarrollo web, práctica, layout, responsive, diseño web, HTML, CSS3">
+    <meta name="author" content="Estudiante de Desarrollo Web">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Practica - Css flex y grid">
+    <meta property="og:description" content="Esta es un practica en el uso de csss con flex y grid">
+    <meta property="og:image" content="images/mobile/logo.svg">
+    <meta property="og:site_name" content="Practica de Css :D">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="Práctica - CSS Flex y Grid">
+    <meta property="twitter:description" content="Esta es una práctica en el uso de CSS con Flexbox y Grid">
+    <meta property="twitter:image" content="images/mobile/logo.svg">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#3DBFFF">
+    <meta name="msapplication-TileColor" content="#3DBFFF">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Práctica CSS">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.svg" alt="logo">
+            </div>
+            <div class="nav-links">
+                <a class="nav-link" href="#">About</a>
+                <a class="nav-link" href="#">Services</a>
+                <a class="nav-link" href="#">Projects</a>
+                <a class="nav-link-contact" href="#">Contact</a>
+            </div>
+            <button class="hamburger-btn" id="hamburger-btn">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
+        
+        <!-- Menú móvil emergente -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu-content">
+                <a class="mobile-nav-link" href="#">About</a>
+                <a class="mobile-nav-link" href="#">Services</a>
+                <a class="mobile-nav-link" href="#">Projects</a>
+                <a class="mobile-nav-link-contact" href="#">Contact</a>
+            </div>
+        </div>
+        
+        <h1>WE ARE CREATIVES</h1>
+        <div class="arrow-down">
+            <img src="images/icon-arrow-down.svg" alt="arrow-down">
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="contenedor-principal-grid">
+            <div class="contenedor-grid">
+                <h2>Transform your brand</h2>
+                <p>We are a full-service creative agency specializing in helping brands grow fast. Engage your clients through compelling visuals that do most of the marketing for you.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div class="contenedor-grid">
+            </div>
+            <div class="contenedor-grid">
+            </div>
+            <div class="contenedor-grid">
+                <h2>Stand out to the right audience</h2>
+                <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll build and extend your brand in digital places.</p>
+                <a href="#">Learn more</a>
+            </div>
+            <div class="contenedor-grid">
+                <h2>Graphic design</h2>
+                <p>Great design makes you memorable. We deliver artwork that underscores your brand message and captures potential clients’ attention.</p>
+                
+            </div>
+            <div class="contenedor-grid">
+                <h2>Photography</h2>
+                <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business image.</p>
+            
+            </div>
+        </div>
+            <h2>CLIENT TESTIMONIALS</h2>            
+            <div class="contenedor-grid-testimonials">
+                <div class="contenedor-grid-testimonials-1">
+                    <img src="images/image-emily.jpg" alt="emily">
+                    <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.</p>
+                    <h3>Emily R.</h3>
+                    <p>Marketing Director</p>
+                </div>
+                <div class="contenedor-grid-testimonials-2">
+                    <img src="images/image-thomas.jpg" alt="thomas">
+                    <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and enjoyable experience.</p>
+                    <h3>Thomas S.</h3>
+                    <p>Chief Operating Officer</p>
+                </div>
+                <div class="contenedor-grid-testimonials-3">
+                    <img src="images/image-jennie.jpg" alt="jennie">
+                    <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+                    <h3>Jennie F.</h3>
+                    <p>Business Owner</p>
+                </div>
+            </div>
+            <div class="contenedor-grid-gallery">
+                <div class="contenedor-grid-gallery-item-1">
+                    <img src="images/desktop/image-gallery-milkbottles.jpg" alt="milkbottles">
+                </div>
+                <div class="contenedor-grid-gallery-item-2">
+                    <img src="images/desktop/image-gallery-orange.jpg" alt="orange">
+                </div>
+                <div class="contenedor-grid-gallery-item-3">
+                    <img src="images/desktop/image-gallery-cone.jpg" alt="cone">
+                </div>
+                <div class="contenedor-grid-gallery-item-4">
+                    <img src="images/desktop/image-gallery-sugarcubes.jpg" alt="sugarcubes">
+                </div>
+            </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <img src="images/logo.svg" alt="logo">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Projects</a>
+            </div>
+            <div class="footer-social-media">
+                <img src="images/icon-facebook.svg" alt="facebook">
+                <img src="images/icon-instagram.svg" alt="instagram">
+                <img src="images/icon-twitter.svg" alt="twitter">
+                <img src="images/icon-pinterest.svg" alt="pinterest">
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Funcionalidad del menú hamburguesa emergente
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('active');
+            
+            // Animación del botón hamburguesa
+            const lines = hamburgerBtn.querySelectorAll('.hamburger-line');
+            if (mobileMenu.classList.contains('active')) {
+                // Transformar a X
+                lines[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                // Prevenir scroll del body
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Volver a hamburguesa
+                lines[0].style.transform = 'rotate(0) translate(0, 0)';
+                lines[1].style.opacity = '1';
+                lines[2].style.transform = 'rotate(0) translate(0, 0)';
+                // Restaurar scroll del body
+                document.body.style.overflow = 'auto';
+            }
+        }
+        
+        function closeMenu() {
+            mobileMenu.classList.remove('active');
+            // Resetear botón hamburguesa
+            const lines = hamburgerBtn.querySelectorAll('.hamburger-line');
+            lines[0].style.transform = 'rotate(0) translate(0, 0)';
+            lines[1].style.opacity = '1';
+            lines[2].style.transform = 'rotate(0) translate(0, 0)';
+            // Restaurar scroll del body
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Abrir/cerrar menú con el botón hamburguesa
+        hamburgerBtn.addEventListener('click', toggleMenu);
+        
+        // Cerrar menú al hacer clic en el overlay (fondo oscuro)
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                closeMenu();
+            }
+        });
+        
+        // Cerrar menú al hacer clic en un enlace
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-link-contact');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+        });
+        
+        // Cerrar menú con la tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+    </script>
+</body>
+</html>
